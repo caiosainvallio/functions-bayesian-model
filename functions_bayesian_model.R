@@ -1,5 +1,5 @@
-library(devtools)
-devtools::install_github("strengejacke/sjstats")
+# library(devtools)
+# devtools::install_github("strengejacke/sjstats")
 
 library(sjstats)
 library(sjmisc)
@@ -51,30 +51,18 @@ m5 <- brm(
 )
 
 
-# Highest Density Interval ---------------------------------------------------
-
-
-
 # Tidy Summary of Bayesian Models --------------------------------------------
-
-tidy_stan(m3)
 parameters::model_parameters(m3)
 
-tidy_stan(m3, typical = "mean")
 parameters::model_parameters(m3, typical = "mean" )
 
-tidy_stan(m3, type = "all")
 parameters::model_parameters(m3, type = "all")
 
-tidy_stan(m2, prob = c(.5, .95))
 parameters::model_parameters(m2, prob = c(.5, .95))
 
 
 
-
 # Summary of Mediation Analysis ----------------------------------------------
-
-mediation(m2)
 bayestestR::mediation(m2)
 
 summary(m1)
@@ -85,11 +73,7 @@ bayestestR::mediation(m2, prob = .95)
 
 
 # Bayes r-squared and LOO-adjusted r-squared ---------------------------------
-
-
-r2(m5)
 performance::r2(m5)
-
 
 performance::r2(m5, loo = TRUE)
 
